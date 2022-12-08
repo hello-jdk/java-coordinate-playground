@@ -1,8 +1,7 @@
 package carsdomain;
 
 public abstract class Car {
-
-    int distance;
+    protected int distance;
     /**
      * 리터당 이동 거리. 즉, 연비
      */
