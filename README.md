@@ -85,22 +85,22 @@ public abstract class Car {
 ## 1단계 구현
 
 - Car (추상 클래스) (소나타, 아반떼, K5)
-    - getDistancePerLiter()
-        - 연비 (정적 모델)
-        - [ ] 자동차에 대한 연비 반환
-            - [ ] Sonata
-            - [ ] Avante
-            - [ ] K5
-    - getTripDistance()
-        - 이동거리 (동적 모델)
-        - [x] 해당 자동차가 이동할 거리 반환
-    - String getName()
-        - 자동차이름 (정적 모델)
-        - [ ] 해당 자동차 이름 반환
-            - [ ] Sonata, Avante, K5
-    - getChargeQuantity()
-        - 동적 모델 / 정적 모델 = 동적 모델
-        - [ ] 주입해야할 연료량 반환
+    - [x] Sonata
+    - [x] Avante
+    - [ ] K5
+    - 구현
+      - getDistancePerLiter()
+          - 연비 (정적 모델)
+          -  자동차에 대한 연비 반환
+      - getTripDistance()
+          - 이동거리 (동적 모델)
+          -  해당 자동차가 이g동할 거리 반환
+      - String getName()
+          - 자동차이름 (정적 모델)
+          - 해당 자동차 이름 반환
+      - getChargeQuantity()
+          - 동적 모델 / 정적 모델 = 동적 모델
+          - 주입해야할 연료량 반환
 
 - RentCompany
     - create()
