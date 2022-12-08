@@ -1,21 +1,25 @@
 package carsdomain;
 
 public class Sonata extends Car {
+    private final double distancePerLiter =10L;
+
+    public Sonata(int distance) {
+        super(distance);
+    }
 
     @Override
-
     double getDistancePerLiter() {
-        return this.distance;
+        return distancePerLiter;
     }
 
     @Override
     double getTripDistance() {
-        return 0;
+        return this.distance;
     }
 
     @Override
     String getName() {
-        return null;
+        return "Sonata";
     }
 
     @Override

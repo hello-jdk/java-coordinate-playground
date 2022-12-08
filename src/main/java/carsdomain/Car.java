@@ -2,6 +2,11 @@ package carsdomain;
 
 public abstract class Car {
     protected int distance;
+
+    public Car(int distance) {
+        this.distance = distance;
+    }
+
     /**
      * 리터당 이동 거리. 즉, 연비
      */

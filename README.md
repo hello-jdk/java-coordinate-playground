@@ -93,7 +93,7 @@ public abstract class Car {
             - [ ] K5
     - getTripDistance()
         - 이동거리 (동적 모델)
-        - [ ] 해당 자동차가 이동할 거리 반환
+        - [x] 해당 자동차가 이동할 거리 반환
     - String getName()
         - 자동차이름 (정적 모델)
         - [ ] 해당 자동차 이름 반환
