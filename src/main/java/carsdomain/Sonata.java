@@ -1,7 +1,6 @@
 package carsdomain;
 
 public class Sonata extends Car {
-    private final double distancePerLiter =10L;
 
     public Sonata(int distance) {
         super(distance);
@@ -9,7 +8,7 @@ public class Sonata extends Car {
 
     @Override
     double getDistancePerLiter() {
-        return distancePerLiter;
+        return 10L;
     }
 
     @Override
