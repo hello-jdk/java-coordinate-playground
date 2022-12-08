@@ -3,13 +3,13 @@
 ## 기능 요구사항
 
 - 렌터카를 운영하고 있는 회사
-- 보유 차량 Sonata 2대, Avante 1대, K5 2대 (총 5대)
+- 보유 차량 carsdomain.Sonata 2대, carsdomain.Avante 1대, carsdomain.K5 2대 (총 5대)
 - 고객으로 부터 목적지의 대략적인 이동거리를 입력받아 필요한 연료를 주입.
 
 - 연비
-    - Sonata: 10km/L
-    - Avante: 15km/L
-    - K5: 13km/L
+    - carsdomain.Sonata: 10km/L
+    - carsdomain.Avante: 15km/L
+    - carsdomain.K5: 13km/L
 
 ## 프로그래밍 요구사항
 
@@ -26,19 +26,19 @@ public class RentCompanyTest {
     @Test
     public void report() throws Exception {
         RentCompany company = RentCompany.create(); // factory method를 사용해 생성
-        company.addCar(new Sonata(150));
-        company.addCar(new K5(260));
-        company.addCar(new Sonata(120));
-        company.addCar(new Avante(300));
-        company.addCar(new K5(390));
+        company.addCar(new carsdomain.Sonata(150));
+        company.addCar(new carsdomain.K5(260));
+        company.addCar(new carsdomain.Sonata(120));
+        company.addCar(new carsdomain.Avante(300));
+        company.addCar(new carsdomain.K5(390));
 
         String report = company.generateReport();
         assertThat(report).isEqualTo(
-                "Sonata : 15리터" + NEWLINE +
-                        "K5 : 20리터" + NEWLINE +
-                        "Sonata : 12리터" + NEWLgINE +
-                        "Avante : 20리터" + NEWLINE +
-                        "K5 : 30리터" + NEWLINE
+                "carsdomain.Sonata : 15리터" + NEWLINE +
+                        "carsdomain.K5 : 20리터" + NEWLINE +
+                        "carsdomain.Sonata : 12리터" + NEWLgINE +
+                        "carsdomain.Avante : 20리터" + NEWLINE +
+                        "carsdomain.K5 : 30리터" + NEWLINE
         );
     }
 }
@@ -47,10 +47,10 @@ public class RentCompanyTest {
 
 - 힌트
     1. Coffee, Tea 예제같이 상속을 활용
-    2. 공통 기능 구현을 담당할 Car 추상 클래스 추가
+    2. 공통 기능 구현을 담당할 carsdomain.Car 추상 클래스 추가
 
 ```java
-public abstract class Car {
+public abstract class carsdomain.Car {
     /**
      * 리터당 이동 거리. 즉, 연비
      */
@@ -84,20 +84,20 @@ public abstract class Car {
 
 ## 1단계 구현
 
-- Car (추상 클래스)
+- carsdomain.Car (추상 클래스) (소나타, 아반떼, carsdomain.K5)
     - getDistancePerLiter()
         - 연비 (정적 모델)
         - [ ] 자동차에 대한 연비 반환
-            - [ ] Sonata
-            - [ ] Avante
-            - [ ] K5
+            - [ ] carsdomain.Sonata
+            - [ ] carsdomain.Avante
+            - [ ] carsdomain.K5
     - getTripDistance()
         - 이동거리 (동적 모델)
         - [ ] 해당 자동차가 이동할 거리 반환
     - String getName()
         - 자동차이름 (정적 모델)
         - [ ] 해당 자동차 이름 반환
-            - [ ] Sonata, Avante, K5ㅎ
+            - [ ] carsdomain.Sonata, carsdomain.Avante, K5ㅎ
     - getChargeQuantity()
         - 동적 모델 / 정적 모델 = 동적 모델
         - [ ] 주입해야할 연료량 반환
@@ -105,8 +105,11 @@ public abstract class Car {
 - RentCompany
     - create()
         - 팩토리 메서드 패턴을 사용
-        - [ ] RentCompany 객체(회사)를 생성한다.
+        - [x] RentCompany 객체(회사)를 생성한다.
+          - [x] 회사가 소유하고 있는 자동차들의 상태
     - addCar()
-        - [ ] 회사에 자동차를 추가(등록)한다.
+        - [x] 회사에 자동차를 추가(등록)한다.
+          - [x] 회사가 소유하고 있는 자동차리스트에 추가
     - generateReport()
-        - [ ] 회사에 있는 모든 자동차에 대해 이동거리에 따른 필요한 연료를 출력한다.
+        - [x] 회사에 있는 모든 자동차에 대해 이동거리에 따른 필요한 연료를 출력한다.
+          - [x] 각 자동차의 리포트를 합친다

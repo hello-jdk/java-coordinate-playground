@@ -1,5 +1,8 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
+import carsdomain.Avante;
+import carsdomain.K5;
+import carsdomain.Sonata;
 import org.junit.jupiter.api.Test;
 
 public class RentCompanyTest {
