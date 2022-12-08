@@ -17,11 +17,11 @@
     - 상속과 추상 메소드 활용
     - 위 요구사항을 if/else 절을 사용하지 않고 구현
     - 만족해야하는 테스트 코드
-  
+
 ```java
 
 public class RentCompanyTest {
-private static final String NEWLINE = System.getProperty("line.separator");
+    private static final String NEWLINE = System.getProperty("line.separator");
 
     @Test
     public void report() throws Exception {
@@ -34,16 +34,79 @@ private static final String NEWLINE = System.getProperty("line.separator");
 
         String report = company.generateReport();
         assertThat(report).isEqualTo(
-            "Sonata : 15리터" + NEWLINE +
-            "K5 : 20리터" + NEWLINE +
-            "Sonata : 12리터" + NEWLgINE +
-            "Avante : 20리터" + NEWLINE +
-            "K5 : 30리터" + NEWLINE
+                "Sonata : 15리터" + NEWLINE +
+                        "K5 : 20리터" + NEWLINE +
+                        "Sonata : 12리터" + NEWLgINE +
+                        "Avante : 20리터" + NEWLINE +
+                        "K5 : 30리터" + NEWLINE
         );
     }
-
 }
 
  ```
 
-- 힌트: g
+- 힌트
+    1. Coffee, Tea 예제같이 상속을 활용
+    2. 공통 기능 구현을 담당할 Car 추상 클래스 추가
+
+```java
+public abstract class Car {
+    /**
+     * 리터당 이동 거리. 즉, 연비
+     */
+    abstract double getDistancePerLiter();
+
+    /**
+     * 여행하려는 거리
+     */
+    abstract double getTripDistance();
+
+    /**
+     * 차종의 이름
+     */
+    abstract String getName();
+
+    /**
+     * 주입해야할 연료량을 구한다.
+     */
+    double getChargeQuantity() {
+        return getTripDistance() / getDistancePerLiter();
+    }
+}
+```
+
+- 2단계
+    - 인터페이스를 적용해 구현하기
+
+- 추상화 단계
+    1. 현실세계의 객체의 인스턴스 들의 공통적인 부분을 추상화
+    2. 필요한 부분(핵심적인)만 사용을 위해 가져오기 (행동이 상태를 만든다)
+
+## 1단계 구현
+
+- Car (추상 클래스)
+    - getDistancePerLiter()
+        - 연비 (정적 모델)
+        - [ ] 자동차에 대한 연비 반환
+            - [ ] Sonata
+            - [ ] Avante
+            - [ ] K5
+    - getTripDistance()
+        - 이동거리 (동적 모델)
+        - [ ] 해당 자동차가 이동할 거리 반환
+    - String getName()
+        - 자동차이름 (정적 모델)
+        - [ ] 해당 자동차 이름 반환
+            - [ ] Sonata, Avante, K5ㅎ
+    - getChargeQuantity()
+        - 동적 모델 / 정적 모델 = 동적 모델
+        - [ ] 주입해야할 연료량 반환
+
+- RentCompany
+    - create()
+        - 팩토리 메서드 패턴을 사용
+        - [ ] RentCompany 객체(회사)를 생성한다.
+    - addCar()
+        - [ ] 회사에 자동차를 추가(등록)한다.
+    - generateReport()
+        - [ ] 회사에 있는 모든 자동차에 대해 이동거리에 따른 필요한 연료를 출력한다.
