@@ -7,17 +7,17 @@ public class Avante extends Car{
 
     @Override
     double getDistancePerLiter() {
-        return 0;
+        return 15L;
     }
 
     @Override
     double getTripDistance() {
-        return 0;
+        return this.distance;
     }
 
     @Override
     String getName() {
-        return null;
+        return "Avante";
     }
 
     @Override
