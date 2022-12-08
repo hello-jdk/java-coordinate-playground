@@ -87,14 +87,14 @@ public abstract class Car {
 - Car (추상 클래스) (소나타, 아반떼, K5)
     - [x] Sonata
     - [x] Avante
-    - [ ] K5
+    - [x] K5
     - 구현
       - getDistancePerLiter()
           - 연비 (정적 모델)
           -  자동차에 대한 연비 반환
       - getTripDistance()
           - 이동거리 (동적 모델)
-          -  해당 자동차가 이g동할 거리 반환
+          -  해당 자동차가 이동할 거리 반환
       - String getName()
           - 자동차이름 (정적 모델)
           - 해당 자동차 이름 반환

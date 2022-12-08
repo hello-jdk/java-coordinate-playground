@@ -28,4 +28,15 @@ public abstract class Car {
     double getChargeQuantity() {
         return getTripDistance() / getDistancePerLiter();
     }
+
+    @Override
+    public String toString() {
+        return makeReport();
+    }
+
+    private String makeReport() {
+        String carName = this.getName();
+        String chargeQuantity = String.format("%.0f", this.getChargeQuantity());
+        return carName + " : " + chargeQuantity+"리터";
+    }
 }

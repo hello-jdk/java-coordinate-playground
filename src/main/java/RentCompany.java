@@ -22,7 +22,7 @@ public class RentCompany {
         cars.forEach(car -> {
             stringBuilder
                     .append(car.toString())
-                    .append("\n");
+                    .append(System.getProperty("line.separator"));
         });
         return stringBuilder.toString();
     }
