@@ -1,6 +1,6 @@
 package carsdomain;
 
-public abstract class Car {
+public abstract class Car implements Vehicle{
     protected int distance;
 
     public Car(int distance) {
