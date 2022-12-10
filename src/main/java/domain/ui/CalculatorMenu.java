@@ -39,7 +39,7 @@ public class CalculatorMenu implements UserInterface {
 
     private String updateUserInput(String userInput) {
         final int OFFSET = 1;
-        int startIndex = userInput.indexOf('-') + OFFSET;
+        int startIndex = userInput.indexOf(')') + OFFSET;
         return userInput.substring(startIndex);
     }
 
