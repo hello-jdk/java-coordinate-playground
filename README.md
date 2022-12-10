@@ -72,8 +72,13 @@
           - [x] RawString -> String[]
           - [x] String[] -> List<String[]>
           - [x] List<String] -> List<CoordinateSet>
-        - [x] 좌표의 갯수에 따라 프로그램 생성
+        - [x] 좌표의 갯수에 따라 프로그램 생성()
     - [ ] 프로그램을 구동시킨 후 결과값을 반환한다.
+
+// TODO: 
+프로그램을 구동시키면 값을 반환하는 것이 아닌 
+1. 좌표값들을 GUI로 출력하고 
+2. 결과에 대한 코멘트를 출력해야한다. 
 
 - Program[LineLengthCalculator] (데이터를 이용해 로직을 수행한다.)
     - [x] 인스턴스 생성 시 입력에 따라 상태가 결정된다.
