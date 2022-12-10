@@ -7,9 +7,8 @@ import org.junit.jupiter.api.Test;
 class CalculatorMenuTest {
 
     @Test
-    void 입력에따라_서비스를_생성한다() {
+    void 프로그램구동_및_값반환() {
         UserInterface menu = new CalculatorMenu("(10,10)-(14,15)");
         assertThat(menu.runProgram()).isEqualTo(6.403124);
-
     }
 }

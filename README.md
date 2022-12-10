@@ -66,9 +66,14 @@
 ###
 
 - UserInterface[CalculatorMenu] (입력을 판단하고 그에 따라 요청을 결정)
-    - [ ] 인스턴스 생성 시 입력에 따라 
+    - 인스턴스 생성 시 입력에 따라 
       - [ ] 판단 
-      - [x] 프로그램을 생성
+      - [x] 프로그램을 생성 
+        - [x] Raw값 리스트 형태의 CoordinateSet으로 변환
+          - [x] RawString -> String[]
+          - [x] String[] -> List<String[]>
+          - [x] List<String] -> List<CoordinateSet>
+        - [x] 좌표의 갯수에 따라 프로그램 생성
     - [ ] 프로그램을 구동시킨 후 값을 반환한다.
 
 - Program[LineLengthCalculator] (데이터를 이용해 로직을 수행한다.)
